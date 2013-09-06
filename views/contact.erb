@@ -1,0 +1,51 @@
+<% @title = 'Contact &ndash; Schedule Comparinator 2013'; @user_css = 'contact'; %>
+<%= partial :'part/head' %>
+
+<!--[if lte IE 8]>
+<div class="layer center accent2 nopad large">
+	<div class="layer_inner">
+		<h1 class="title">You are using an unsupported browser.<br>Please use Chrome, Safari, or Firefox for the best possible experience.</h1>
+	</div>
+</div>
+<![endif]-->
+
+<div class="layer accent huge center">
+	<div class="layer_inner">
+		<h1 class="title">Contact Us</h1>
+		<p class="subtitle">Question? Comment? Suggestion? Let us know!</p>
+	</div>
+</div>
+
+<div class="layer light center">
+	<div class="layer_inner">
+		<h2 class="title">If you have something to say&hellip;</h2>
+		<p class="subtitle">Contact us at admin (at) schedulecomparinator (dot) com. Thanks for your feedback and support!</p>
+	</div>
+</div>
+
+<div class="layer lighter left thin">
+	<div class="layer_inner">
+		<img src="http://placehold.it/120x120" alt="" class="right">
+		<h2 class="title">Developers developers developers!</h2>
+		<p class="subtitle">Interested in joining the Schedule Comparinator 2014 team? Maybe you want some CAS hours or experience working in a team. Just shoot us an email and we'll try to see where you might fit in next year.</p>
+	</div>
+</div>
+
+<div id="sign_up" class="layer accent2">
+	<div class="layer_inner">
+		<p class="action">Sign up for Schedule Comparinator 2013 now!</p>
+		<a href="/register" id="sign_up_button"><%= @student.nil? ? 'Sign up &raquo;' : 'Comparinate!' %></a>
+
+		<div class="social">
+			<p class="social_reminder">Remember to share Schedule Comparinator 2013 with your friends!</p>
+			<div class="fb-like" data-href="http://www.facebook.com/ScheduleComparinator" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false" data-action="like" data-font="arial" style="margin-right:30px"></div>
+			<div class="g-plusone" data-href="http://schedulecomparinator.com/" data-size="medium"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="horizontal">Tweet</a>
+			<a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fschedulecomparinator.com%2F&name=Schedule+Comparinator&description=It%27s+an+easier+way+to+compare+schedules%21" title="Share on Tumblr" style="line-height: 200px; display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+		</div>
+	</div>
+	
+	<!-- TODO: add social plugins -->
+</div>
+
+<%= partial :'part/foot' %>

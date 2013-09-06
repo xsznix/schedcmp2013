@@ -1,0 +1,79 @@
+<% @title = 'Edit Schedule &ndash; Schedule Comparinator 2013'; @user_css = 'edit'; %>
+<%= partial :'part/head' %>
+
+<div class="layer accent huge center nopad">
+	<div class="layer_inner">
+		<h1 class="title">Enter your schedule</h1>
+		<p class="subtitle">In each box below, enter the course number corresponding to the course you are taking that block.</p>
+	</div>
+</div>
+
+<div id="courses_wrapper" class="layer lighter center nopad twocol<%= @student.school == :lasa ? ' lasa' : '' %>">
+
+	<div class="notices layer nopad thin">
+		<div class="layer_inner">
+			<h2 class="title">Instructions</h2>
+			<% if @student.school == :lasa %>
+			<p class="subtitle">Go to the <a href="http://www.lasaonline.org/apps/pages/index.jsp?uREC_ID=120823&type=d">LASA Course Catalog</a> and find the course identifier for each of the courses you are taking. Enter in each course identifier as it appears, except do not enter the ".X" or ".Y" at the end of the course identifier. <b>For example, for <i>1448.H200.X Songwriting</i>, enter just <i>1448.H200</i>.</b></p>
+			<% else %>
+			<p class="subtitle">Enter in the course number as it appears on your schedule. <b>For example, for <i>3921A Computer Science I</i>, enter just <i>3921A</i>.</b> If you need, you should reference the <a href="http://oldweb.roundrockisd.org/Modules/ShowDocument.aspx?documentid=23644">RRISD Course Catalog</a>.</p>
+			<% end %>
+			<p class="subtitle">You may change this information at any time if it turns out to be incorrect.</p>
+			<p class="subtitle"><a href="/newuser">Click here</a> to change your school and graduation year.</p>
+		</div>
+	</div>
+	<form id="edit" method="POST">
+		<div class="layer_inner">
+			<div class="col">
+				<h2 class="title">Fall Semester</h2>
+				<ol class="semester">
+					<% (1..8).each do |b| %>
+					<li class="course" id="course<%=b%>">
+						<input type="text" id="block<%=b%>" name="<%=b%>" class="coursenum" data-block="<%=b%>" value="<%= @courses[b-1][:course_id] %>">
+						<span class="coursename" data-block="<%=b%>"><%= @courses[b-1][:course_name] %></span>
+					</li>
+					<% end %>
+				</ol>
+			</div>
+			
+			<div class="col clearafter">
+				<h2 class="title">Spring Semester</h2>
+				<ol class="semester">
+					<% (9..16).each do |b| %>
+					<li class="course" id="course<%=b%>">
+						<input type="text" id="block<%=b%>" name="<%=b%>" class="coursenum" data-block="<%=b%>" value="<%= @courses[b-1][:course_id] %>">
+						<span class="coursename" data-block="<%=b%>"><%= @courses[b-1][:course_name] %></span>
+					</li>
+					<% end %>
+				</ol>
+			</div>
+		</div>
+
+		<br style="clear:both">
+
+		<div class="notices layer nopad thin">
+			<div class="layer_inner">
+				<h2 class="title">Disclaimers</h2>
+				<p class="subtitle">Sometimes, courses with different course numbers are taught in the same class. If you believe you are in a class where not everybody who should be showing up shows up, contact us.</p>
+				<p class="subtitle">On the contrary, sometimes courses with the same course number are taught by different teachers in the same block. We cannot guarantee that everyone who shows up as in your class will actually be in your class.</p>
+			</div>
+			
+			<div class="layer_inner">
+				<h2 class="title">Privacy Settings</h2>
+				<p class="subtitle">Allowing your schedule to be searchable helps other people be able to find your schedule. This is not any different from posting your schedule publicly on Facebook for everyone to see.</p>
+				<p class="subtitle">Regardless of what you check, other people will still be able to find you if they share a class with you.</p>
+				<p class="subtitle">
+					<label><input type="radio" name="public" value="yes" <%= @student.public ? "checked" : "" %>>Allow my schedule to be searchable by other users</label><br>
+					<label><input type="radio" name="public" value="no" <%= @student.public ? "" : "checked" %>>Do not allow my schedule to be searchable by other users</label>
+				</p>
+		</div>
+
+			<input type="submit" class="button accent2" value="Comparinate!">
+		</div>
+	</form>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/edit.js"></script>
+
+<%= partial :'part/foot' %>

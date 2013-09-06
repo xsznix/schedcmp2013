@@ -1,0 +1,58 @@
+<% @title = @course[:name] + ' &ndash; Schedule Comparinator 2013'; @user_css = 'course'; %>
+<%= partial :'part/head' %>
+
+<div id="course_header" class="layer accent huge center nopad clearafter">
+	<div class="layer_inner">
+		<h1 class="title course"><%= @course[:name] %></h1>
+		<p class="subtitle school"><%= @school_long %></p>
+	</div>
+</div>
+
+<div class="layer dark center nopad">
+	<div class="layer_inner">
+		<h3 class="title"><%= @numstudents %> student<%= @numstudents == 1 ? ' is' : 's are' %> taking <%= @course[:name] %> at <%= @school %></h3>
+		<% unless @shared_courses.empty? %><p class="subtitle">The following classes are taught together: <%=
+			@shared_courses.map { |course| "<a href='#{course[:profile]}'>#{course[:name]}</a>"} \
+				.join ', '
+		%></p><% end %>
+	</div>
+</div>
+
+<% counter = 0
+(1..8).each do |i|
+	unless @students_sharing[i].empty?
+		counter += 1 %>
+
+<div class="layer <%= counter % 2 == 1 ? 'lighter' : 'light' %> center nopad clearafter block">
+	<div class="layer_inner">
+		<h2 class="title">Block <%=i%> (Fall)</h2>
+		<% @students_sharing[i].each do |student| %>
+		<a class="classmate" href="<%= student.profile %>">
+			<img src="<%= student.avatar %>" alt="<%= student.name %>">
+			<span class="name"><span class="name_inner"><span class="fname"><%= student.first_name %></span>
+					<span class="lname"><%= student.last_name %></span></span></span>
+		</a>
+		<% end %>
+	</div>
+</div>
+
+<% end
+unless @students_sharing[i+8].empty?
+	counter += 1 %>
+
+<div class="layer <%= counter % 2 == 1 ? 'lighter' : 'light' %> center nopad clearafter block">
+	<div class="layer_inner">
+		<h2 class="title">Block <%=i%> (Spring)</h2>
+		<% @students_sharing[i+8].each do |student| %>
+		<a class="classmate" href="<%= student.profile %>">
+			<img src="<%= student.avatar %>" alt="<%= student.name %>">
+			<span class="name"><span class="name_inner"><span class="fname"><%= student.first_name %></span>
+					<span class="lname"><%= student.last_name %></span></span></span>
+		</a>
+		<% end %>
+	</div>
+</div>
+
+<% end; end %>
+
+<%= partial :'part/foot' %>

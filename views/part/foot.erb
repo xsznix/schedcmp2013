@@ -1,0 +1,25 @@
+<div id="footer" class="layer dark">
+	<div id="footer_nav">
+	<% if @student.nil? %>
+		<span><a href="/developers">Developers</a></span>
+		<span><a href="/contact">Contact</a></span>
+	<% else %>
+		<span><a href="/developers">Developers</a></span>
+		<span><a href="/contact">Contact</a></span>
+		<span><a href="/edit">Edit Schedule</a></span>
+		<span><a href="/compare">Comparinate!</a></span>
+		<span><a href="/search">Search</a></span>
+	<% end %>
+	</div>
+	<% unless @student.nil? %>
+	<div id="footer_me">
+		<p>You are currently logged in as <%= @student.name %>.</p>
+	</div>
+	<% end %>
+</div>
+
+<script src="/js/all.js"></script>
+<script src="/js/social.js"></script>
+<script src="/js/retina.js"></script>
+</body>
+</html>

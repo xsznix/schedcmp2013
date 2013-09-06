@@ -1,0 +1,62 @@
+<% @title = "#{@user.name} &ndash; Schedule Comparinator 2013"; @user_css = 'profile'; %>
+<%= partial :'part/head' %>
+
+<div id="user_header" class="layer accent huge left nopad clearafter thin">
+	<div class="layer_inner">
+		<img src="<%= @user.avatar_large %>" alt="<%= @user.name %>" id="avatar" class="left">
+		<h1 class="title"><span class="fname"><%= @user.first_name %></span> <span class="lname"><%= @user.last_name %></span></h1>
+		<p class="subtitle school"><%= @user.long_school_name %></p>
+		<p class="subtitle gradyear">Class of 20<%= @user.gradyear %></p>
+		<a href="<%= @user.external_link %>" class="ext_link" target="_blank"><%= @user.first_name %>'s profile on <%= @user.provider_name %></a>
+	</div>
+</div>
+
+<div class="layer dark center nopad">
+	<div class="layer_inner">
+		<h3 class="title">You share <%= @blocks_sharing.length %> <%= @blocks_sharing.length == 1 ? "class" : "classes" %> with <%= @user.first_name %></h3>
+		<p class="subtitle"><%= @blocks_sharing.join ', ' %></p>
+	</div>
+</div>
+
+<% if @user.public %>
+
+<div class="layer lighter center nopad twocol clearafter">
+	<div class="layer_inner">
+		<h2 class="title"><%= @user.first_name %>'s Schedule</h2>
+	</div>
+	<div class="col">
+		<h3 class="title semester">Fall</h3>
+		<ol class="courselist">
+			<% @schedule.slice(0,8).each do |course| %>
+			<li>
+				<a href="<%= course[:profile] %>" class="courselink"><%= course[:name] %></a>
+				<span class="coursenum"><%= course[:courseid] %></span>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+	<div class="col">
+		<h3 class="title semester">Spring</h3>
+		<ol class="courselist">
+			<% @schedule.slice(8,8).each do |course| %>
+			<li>
+				<a href="<%= course[:profile] %>" class="courselink"><%= course[:name] %></a>
+				<span class="coursenum"><%= course[:courseid] %></span>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+</div>
+
+<% else %>
+
+<div class="layer lighter center nopad">
+	<div class="layer_inner">
+		<h2 class="title"><%= @user.first_name %>'s Schedule</h2>
+		<p class="subtitle"><%= @user.first_name%> has not chosen to share their schedule publicly.</p>
+	</div>
+</div>
+
+<% end %>
+
+<%= partial :'part/foot' %>

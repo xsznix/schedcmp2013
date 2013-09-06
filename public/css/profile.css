@@ -1,0 +1,89 @@
+/* user header */
+
+#user_header .title {
+	font-size: 48px;
+}
+
+#user_header .title span {
+	font-family: 'Raleway';
+}
+
+#user_header .subtitle {
+	font-size: 28px;
+	max-width: none;
+	margin-top: 4px;
+	margin-bottom: 12px;
+}
+
+.fname {
+	font-weight: 700;
+}
+
+p.school {
+	margin-bottom: 8px !important;
+	color: rgba(255,255,255,0.9) !important;
+}
+
+p.gradyear {
+	font-size: 20px !important;
+}
+
+#avatar {
+	width: 150px;
+	margin-bottom: 32px;
+	float: right;
+}
+
+.ext_link {
+	display: block;
+	margin-bottom: 24px;
+	color: #fff;
+
+	font-family: 'Source Sans Pro';
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.twocol {
+	text-align: center;
+}
+
+.col {
+	width: auto !important;
+	float: none !important;
+	display: inline-block;
+}
+
+.semester {
+	font-weight: 700;
+}
+
+.courselist {
+	list-style-position: inside;
+	font-size: 22px;
+}
+
+.courselist li {
+	margin-bottom: 8px;
+	text-align: left !important;
+}
+
+.courselink, .coursenum {
+	font-family: 'Raleway';
+	font-size: 22px;
+}
+
+.coursenum {
+	color: #aaa;
+}
+
+@media screen and (max-width: 640px) {
+	#avatar {
+		margin-bottom: 0;
+		float: none;
+	}
+
+	#user_header .title {
+		margin-top: 8px;
+	}
+}

@@ -1,0 +1,62 @@
+<% @title = 'Search &ndash; Schedule Comparinator 2013'; @user_css = 'search'; %>
+<%= partial :'part/head' %>
+
+<div class="layer accent huge center nopad">
+	<div class="layer_inner">
+		<h1 class="title">Search</h1>
+		<p class="subtitle">Search users and courses</p>
+	</div>
+</div>
+
+<div class="layer dark center nopad">
+	<div class="layer_inner">
+		<form id="searchform">
+			<input type="text" id="search" name="query" placeholder="Enter a name or course&hellip;" value="<%= @query.nil? ? '""' : @query %>">
+			<input type="submit" id="submit_search" class="button accent" value="Search">
+		</form>
+	</div>
+</div>
+
+<% if @found %>
+
+<% unless @name_matches.empty? %>
+
+<div class="layer lighter center nopad">
+	<div class="layer_inner">
+		<h2 class="title">Search Results: Users</h2>
+
+		<ol class="results">
+			<% unless @name_matches.empty?
+				@name_matches.each do |match| %>
+			<li class="result user">
+				<img src="<%= match.avatar %>" alt="<%= match.name %>">
+				<a href="<%= match.profile %>"><span class="fname"><%= match.first_name %></span> <span class="lname"><%= match.last_name %></span></a>
+				<span class="school"><%= match.school_name %></span>
+				<span class="gradyear">Class of 20<%= match.gradyear %></span>
+			</li>
+			<% end; end %>
+		</ol>
+	</div>
+</div>
+
+<% end; unless @course_match.empty? %>
+
+<div class="layer light center nopad">
+	<div class="layer_inner">
+		<h2 class="title">Search Results: Courses</h2>
+
+		<ol class="results">
+			<% @course_match.each do |match| %>
+			<li class="result course">
+				<span class="coursename"><a href="/course/<%=@student.school.to_s%>/<%=match[:id]%>"><%= match[:name] %></a></span>
+				<span class="coursenum"><%= match[:id] %></span>
+				<span class="numtaking"><%= match[:numtaking].to_s + (@numtaking == 1 ? ' person is' : ' people are') %> taking this course</span>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+</div>
+
+<% end; end %>
+
+<%= partial :'part/foot' %>

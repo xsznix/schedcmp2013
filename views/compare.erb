@@ -1,0 +1,64 @@
+<% @title = 'Comparinate! &ndash; Schedule Comparinator 2013'; @user_css = 'compare'; %>
+<%= partial :'part/head' %>
+
+<div class="layer accent center nopad huge">
+	<div class="layer_inner">
+		<h1 class="title">Your Courses</h1>
+	</div>
+</div>
+
+<div id="viewswitcher" class="layer dark center">
+	<div class="layer_inner">
+		<span>List view:</span>
+		<input type="radio" id="normal" value="normal" name="view" class="hidden" checked>
+		<label for="normal">Normal</label>
+		<input type="radio" id="icons" value="icons" name="view" class="hidden">
+		<label for="icons">Icons</label>
+		<input type="radio" id="compact" value="compact" name="view" class="hidden">
+		<label for="compact">Compact</label>
+	</div>
+</div>
+
+<%
+counter = 0 # tracks displayed block index for layer class alternation
+(1..8).each do |i|
+split_sems = (@list_of_students[i][:name] != @list_of_students[i+8][:name]) %>
+<div class="layer <%= (counter % 2 == 1) ? "light" : "lighter" %> center course nopad clearafter course">
+	<div class="layer_inner">
+		<h2 class="title"><a href="<%=@list_of_students[i][:profile]%>" class="ninjalink"><%= @list_of_students[i][:name] %></a></h2>
+		<% @list_of_students[i][:students].each do |student| %>
+		<a class="classmate" href="<%= student.profile %>">
+			<img src="<%= student.avatar %>" alt="<%= student.name %>" title="<%= student.name %>">
+			<span class="name"><span class="name_inner"><span class="fname"><%= student.first_name %></span>
+					<span class="lname"><%= student.last_name %></span></span></span>
+		</a>
+		<% end %>
+	</div>
+</div>
+<% counter += 1; if split_sems %>
+<div class="layer <%= (counter % 2 == 1) ? "light" : "lighter" %> center course nopad clearafter course">
+	<div class="layer_inner">
+		<h2 class="title"><a href="<%=@list_of_students[i+8][:profile]%>" class="ninjalink"><%= @list_of_students[i+8][:name] %></a></h2>
+		<% @list_of_students[i+8][:students].each do |student| %>
+		<a class="classmate" href="<%= student.profile %>">
+			<img src="<%= student.avatar %>" alt="<%= student.name %>" title="<%= student.name %>">
+			<span class="name"><span class="name_inner"><span class="fname"><%= student.first_name %></span>
+					<span class="lname"><%= student.last_name %></span></span></span>
+		</a>
+		<% end %>
+	</div>
+</div>
+<% counter += 1; end; end %>
+
+<div class="layer <%= (counter % 2 == 1) ? "light" : "lighter" %> center nopad">
+	<div class="layer_inner">
+		<h2 class="title">Enjoying schedule comparinator?</h2>
+		<p class="subtitle">Like our app page on Facebook!</p>
+		<div class="fb-like-box" data-href="http://www.facebook.com/ScheduleComparinator" data-show-faces="true" data-stream="false" data-header="true"></div>
+	</div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/compare.js"></script>
+
+<%= partial :'part/foot' %>

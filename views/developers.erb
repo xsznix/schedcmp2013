@@ -1,0 +1,116 @@
+<% @title = 'Developers &ndash; Schedule Comparinator 2013'; @user_css = 'developers'; %>
+<%= partial :'part/head' %>
+
+<!--[if lte IE 8]>
+<div class="layer center accent2 nopad large">
+	<div class="layer_inner">
+		<h1 class="title">You are using an unsupported browser.<br>Please use Chrome, Safari, or Firefox for the best possible experience.</h1>
+	</div>
+</div>
+<![endif]-->
+
+<div class="layer accent huge center">
+	<div class="layer_inner">
+		<h1 class="title">The Team Behind Schedule Comparinator</h1>
+		<p class="subtitle">See who's creating the famous RRISD student-created web app.</p>
+	</div>
+</div>
+
+<div class="layer lighter center twocol clearafter">
+	<div class="layer_inner">
+		<h2 class="title">Developers</h2>
+		<div class="clearafter">
+			<div class="col">
+				<img src="/img/devs/simon.jpg" alt="" class="dev_img">
+				<p class="dev_name">Simon Zeng</p>
+				<p class="dev_role">Manager, Developer, Designer</p>
+				<p class="subtitle">One of the original founders and current project manager of Schedule Comparinator, Simon is a Christian programmer, designer, and musician.</p>
+			</div>
+			<div class="col">
+				<img src="/img/devs/justin.jpg" alt="" class="dev_img">
+				<p class="dev_name">Justin Lai</p>
+				<p class="dev_role">Graphic Designer</p>
+				<p class="subtitle">Justin is a photographer, designer, developer, and lover of frozen grapes. He is the founder of NEOS Magazine and Teenage Photographer.</p>
+			</div>
+		</div>
+		<div class="clearafter">
+			<div class="col">
+				<img src="/img/devs/young.jpg" alt="" class="dev_img">
+				<p class="dev_name">Young Wang</p>
+				<p class="dev_role">Database Engineer, Quality Assurance Manager</p>
+				<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, pariatur deleniti rerum velit autem illo modi quia accusamus accusantium omnis. Yep, Young's pretty lazy. <!-- And for the record, this isn't his placeholder bio; it's his actual bio. --></p>
+			</div>
+			<div class="col">
+				<img src="/img/devs/shawn.jpg" alt="" class="dev_img">
+				<p class="dev_name">Shawn Wu</p>
+				<p class="dev_role">Programmer</p>
+				<p class="subtitle">Shawn likes programming and making video games, and doesn't let sleepiness get in the way of hammering out incomprehensible code comments, class definitions, and English essays.</p>
+			</div>
+		</div>
+		<div class="clearafter">
+			<div class="col">
+				<img src="/img/devs/connor.jpg" alt="" class="dev_img">
+				<p class="dev_name">Connor Statham</p>
+				<p class="dev_role">Cryptography Specialist</p>
+				<p class="subtitle">Connor likes to sleep and doesn't like being woken up.</p>
+			</div>
+			<div class="col">
+				<img src="/img/devs/tristan.jpg" alt="" class="dev_img">
+				<p class="dev_name">Tristan Seifert</p>
+				<p class="dev_role">Routing Engineer</p>
+				<p class="subtitle">Tristan turns food into code and collects old things.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="layer light center twocol clearafter">
+	<div class="layer_inner">
+		<h2 class="title">Special Thanks</h2>
+		<div class="clearafter">
+			<div class="col">
+				<img src="/img/devs/yash.jpg" alt="" class="dev_img">
+				<p class="dev_name">Yash Aggarwal</p>
+				<p class="dev_role">Senior Software Architect</p>
+				<p class="subtitle">Yash is one of the original founders of Schedule Comparinator. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, repellat.</p>
+			</div>
+			<div class="col">
+				<img src="/img/devs/zeyi.jpg" alt="" class="dev_img">
+				<p class="dev_name">Zeyi Lin</p>
+				<p class="dev_role">Advertising Specialist</p>
+				<p class="subtitle">Zeyi enjoys filming obscure videos, reading technology news, and using Oxford commas.</p>
+			</div>
+		</div>
+		<div class="clearafter">
+			<div class="col">
+				<img src="/img/devs/christina.jpg" alt="" class="dev_img">
+				<p class="dev_name">Christina Houser</p>
+				<p class="dev_role">Public Relations Director</p>
+				<p class="subtitle">Christina Houser is a senior in the Westwood IB program. She participates in PROS, Warrior Pride, NSHS, and IBSO. She has been in computer science for two years and is interested in pursuing a career in economics and/or computer science.</p>
+			</div>
+			<div class="col">
+				<img src="/img/devs/leslie.jpg" alt="" class="dev_img">
+				<p class="dev_name">Leslie Tu</p>
+				<p class="dev_role">Quality Assurance Manager</p>
+				<p class="subtitle">Leslie attends Westwood High School and studies computer science through the IB program. She enjoys dancing and playing the cello.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="sign_up" class="layer accent2">
+	<div class="layer_inner">
+		<p class="action">Sign up for Schedule Comparinator 2013 now!</p>
+		<a href="/register" id="sign_up_button"><%= @student.nil? ? 'Sign up &raquo;' : 'Comparinate!' %></a>
+
+		<div class="social">
+			<p class="social_reminder">Remember to share Schedule Comparinator 2013 with your friends!</p>
+			<div class="fb-like" data-href="http://www.facebook.com/ScheduleComparinator" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false" data-action="like" data-font="arial" style="margin-right:30px"></div>
+			<div class="g-plusone" data-href="http://schedulecomparinator.com/" data-size="medium"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="horizontal">Tweet</a>
+			<a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fschedulecomparinator.com%2F&name=Schedule+Comparinator&description=It%27s+an+easier+way+to+compare+schedules%21" title="Share on Tumblr" style="line-height: 200px; display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+		</div>
+	</div>
+</div>
+
+<%= partial :'part/foot' %>

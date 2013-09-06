@@ -1,0 +1,128 @@
+<% @title = 'Schedule Comparinator 2013'; @user_css = 'index'; %>
+<%= partial :'part/head' %>
+
+<!--[if lte IE 8]>
+<div class="layer center accent2 nopad large">
+	<div class="layer_inner">
+		<h1 class="title">You are using an unsupported browser.<br>Please use Chrome, Safari, or Firefox for the best possible experience.</h1>
+	</div>
+</div>
+<![endif]-->
+
+<div id="intro" class="layer dark">
+	<div class="layer_inner">
+		<h1 id="intro_tag" class="title">Quickly and easily compare schedules</h1>
+		<p id="intro_desc" class="subtitle">with the third annual Schedule Comparinator. 
+		<a id="intro_action" href="/register"><%= @student.nil? ? 'Sign up &raquo;' : 'Comparinate!' %></a></p>
+	</div>
+</div>
+
+<div class="layer accent large thin">
+	<div class="layer_inner">
+		<img class="right" src="/img/features/icon1.png" alt="">
+		<h2 class="title">See everybody in one place.</h2>
+		<p class="subtitle">With Schedule Comparinator, finding out who's in your classes is easier than ever. Simply enter in your schedule once, and you can see everybody else who has signed up listed under your classes. It's really as simple as that.</p>
+	</div>
+</div>
+
+<div class="layer lighter twocol clearafter">
+	<div class="layer_inner">
+		<div class="col">
+			<img class="center" src="/img/features/icon2.png" alt="">
+			<h2 class="title">Optional profiles</h2>
+			<p class="subtitle">Let other people view your full schedule and see which classes they have with you with the new profile feature. And if that's not your thing, that's okay too; it's opt-out.</p>
+		</div>
+		<div class="col">
+			<img src="/img/features/icon3.png" alt="" class="center" />
+			<h2 class="title">Social integration</h2>
+			<p class="subtitle">Log in with either your Facebook or Google account. We don't ever see any of your passwords, and you don't have to remember yet another one.</p>
+		</div>
+	</div>
+</div>
+
+<div class="layer light center">
+	<div class="layer_inner">
+		<h2 class="title">Watch the Video</h2>
+		<div class="video-container">
+			<iframe src="//www.youtube.com/embed/ed2kvaA77xY" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+
+<div id="schools" class="layer lighter thin center twocol clearafter">
+	<div class="layer_inner">
+		<h2 class="title">Supported Schools</h2>
+	</div>
+	<div class="col right">
+		<p>Westwood High School</p>
+		<p>McNeil High School</p>
+		<p>Round Rock High School</p>
+	</div>
+	<div class="col left">
+		<p>Stony Point High School</p>
+		<p>Cedar Ridge High School</p>
+		<p>Liberal Arts and Science Academy</p>
+	</div>
+</div>
+
+<div class="layer light center">
+	<div class="layer_inner">
+		<h2 class="title"><a href="/developers" class="ninjalink">Developed by students like you</a></h2>
+		<div id="devs" class="clearafter">
+			<div class="dev">
+				<img src="/img/devs/simon.jpg" alt="" class="dev_img" />
+				<p class="dev_name">Simon Zeng</p>
+				<p class="dev_grade">Westwood, 12th</p>
+			</div>
+			<div class="dev">
+				<img src="/img/devs/justin.jpg" alt="" class="dev_img" />
+				<p class="dev_name">Justin Lai</p>
+				<p class="dev_grade">Westwood, 12th</p>
+			</div>
+			<div class="dev">
+				<img src="/img/devs/young.jpg" alt="" class="dev_img" />
+				<p class="dev_name">Young Wang</p>
+				<p class="dev_grade">Westwood, 12th</p>
+			</div>
+			<div class="dev">
+				<img src="/img/devs/shawn.jpg" alt="" class="dev_img" />
+				<p class="dev_name">Shawn Wu</p>
+				<p class="dev_grade">Westwood, 12th</p>
+			</div>
+			<div class="dev">
+				<img src="/img/devs/connor.jpg" alt="" class="dev_img" />
+				<p class="dev_name">Connor Statham</p>
+				<p class="dev_grade">Round Rock alumnus</p>
+			</div>
+			<div class="dev">
+				<img src="/img/devs/tristan.jpg" alt="" class="dev_img" />
+				<p class="dev_name">Tristan Seifert</p>
+				<p class="dev_grade">Westwood, 10th</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="layer lighter center">
+	<div class="layer_inner">
+		<h2 class="title">The story of Schedule Comparinator</h2>
+		<p class="subtitle">Schedule Comparinator was created through a collaboration between Simon Zeng and Yash Aggarwal at the spur-of-the-moment realization that using Facebook to share schedules was messy and ineffective. We hope that Schedule Comparinator will become an annual tradition for ambitious developers in RRISD.</p>
+	</div>
+</div>
+
+<div id="sign_up" class="layer accent2">
+	<div class="layer_inner">
+		<p class="action">Sign up for Schedule Comparinator 2013 now!</p>
+		<a href="/register" id="sign_up_button"><%= @student.nil? ? 'Sign up &raquo;' : 'Comparinate!' %></a>
+
+		<div class="social">
+			<p class="social_reminder">Remember to share Schedule Comparinator 2013 with your friends!</p>
+			<div class="fb-like" data-href="http://www.facebook.com/ScheduleComparinator" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false" data-action="like" data-font="arial" style="margin-right:30px"></div>
+			<div class="g-plusone" data-href="http://schedulecomparinator.com/" data-size="medium"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="horizontal">Tweet</a>
+			<a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fschedulecomparinator.com%2F&name=Schedule+Comparinator&description=It%27s+an+easier+way+to+compare+schedules%21" title="Share on Tumblr" style="line-height: 200px; display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+		</div>
+	</div>
+</div>
+
+<%= partial :'part/foot' %>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/Product">
+<head>
+<title><%= @title %></title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<meta name="description" content="Schedule Comparinator 2013: Compare your schedule with your friends'.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="shortcut icon" href="/img/logo.png">
+<link rel="stylesheet" href="/css/all.css">
+<% unless @user_css.nil? %><link rel="stylesheet" href="/css/<%= @user_css %>.css"><% end %>
+</head>
+<body<%= @student.nil? ? '' : ' class="logged_in"' %>>
+<div id="header">
+	<img id="h_logo" class="logo" src="/img/logo.png" alt="Schedule Comparinator">
+	<div id="h_name"><a href="/">Schedule Comparinator 2013</a></div>
+	<div id="navbar">
+	<% if @student.nil? %>
+		<span><a href="/developers">Developers</a></span>
+		<span><a href="/contact">Contact</a></span>
+		<span><a href="/register" class="accent">Sign Up</a></span>
+	<% else %>
+		<span><a href="/developers">Developers</a></span>
+		<span><a href="/contact">Contact</a></span>
+		<span><a href="/edit">Edit Schedule</a></span>
+		<span><a href="/compare">Comparinate!</a></span>
+		<span><a href="/search">Search</a></span>
+		<span><a href="/logout" class="accent">Log Out</a></span>
+	<% end %>
+	</div>
+</div>

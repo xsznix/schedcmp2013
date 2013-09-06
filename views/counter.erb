@@ -1,0 +1,48 @@
+<pre>Total registered: <%= Student.count %>
+Total registered with schedules: <%= Student.count(:scheduled_courses.not => nil) %>
+Total with public schedules: <%= Student.count(:public => true) %>
+
+Total through Facebook: <%= Student.count(:provider => 'facebook') %>
+Total through Google+: <%= Student.count(:provider => 'gplus') %>
+
+LASA: <%= Student.count(:school => LASA) %>/<%= Student.count(:school => LASA, :scheduled_courses.not => nil) %>
+2014: <%= Student.count(:school => LASA, :gradyear => 14) %>/<%= Student.count(:school => LASA, :gradyear => 14, :scheduled_courses.not => nil) %>
+2015: <%= Student.count(:school => LASA, :gradyear => 15) %>/<%= Student.count(:school => LASA, :gradyear => 15, :scheduled_courses.not => nil) %>
+2016: <%= Student.count(:school => LASA, :gradyear => 16) %>/<%= Student.count(:school => LASA, :gradyear => 16, :scheduled_courses.not => nil) %>
+2017: <%= Student.count(:school => LASA, :gradyear => 17) %>/<%= Student.count(:school => LASA, :gradyear => 17, :scheduled_courses.not => nil) %>
+
+Westwood: <%= Student.count(:school => WESTWOOD) %>/<%= Student.count(:school => WESTWOOD, :scheduled_courses.not => nil) %>
+    2014: <%= Student.count(:school => WESTWOOD, :gradyear => 14) %>/<%= Student.count(:school => WESTWOOD, :gradyear => 14, :scheduled_courses.not => nil) %>
+    2015: <%= Student.count(:school => WESTWOOD, :gradyear => 15) %>/<%= Student.count(:school => WESTWOOD, :gradyear => 15, :scheduled_courses.not => nil) %>
+    2016: <%= Student.count(:school => WESTWOOD, :gradyear => 16) %>/<%= Student.count(:school => WESTWOOD, :gradyear => 16, :scheduled_courses.not => nil) %>
+    2017: <%= Student.count(:school => WESTWOOD, :gradyear => 17) %>/<%= Student.count(:school => WESTWOOD, :gradyear => 17, :scheduled_courses.not => nil) %>
+
+McNeil: <%= Student.count(:school => MCNEIL) %>/<%= Student.count(:school => MCNEIL, :scheduled_courses.not => nil) %>
+  2014: <%= Student.count(:school => MCNEIL, :gradyear => 14) %>/<%= Student.count(:school => MCNEIL, :gradyear => 14, :scheduled_courses.not => nil) %>
+  2015: <%= Student.count(:school => MCNEIL, :gradyear => 15) %>/<%= Student.count(:school => MCNEIL, :gradyear => 15, :scheduled_courses.not => nil) %>
+  2016: <%= Student.count(:school => MCNEIL, :gradyear => 16) %>/<%= Student.count(:school => MCNEIL, :gradyear => 16, :scheduled_courses.not => nil) %>
+  2017: <%= Student.count(:school => MCNEIL, :gradyear => 17) %>/<%= Student.count(:school => MCNEIL, :gradyear => 17, :scheduled_courses.not => nil) %>
+
+Round Rock: <%= Student.count(:school => ROUNDROCK) %>/<%= Student.count(:school => ROUNDROCK, :scheduled_courses.not => nil) %>
+      2014: <%= Student.count(:school => ROUNDROCK, :gradyear => 14) %>/<%= Student.count(:school => ROUNDROCK, :gradyear => 14, :scheduled_courses.not => nil) %>
+      2015: <%= Student.count(:school => ROUNDROCK, :gradyear => 15) %>/<%= Student.count(:school => ROUNDROCK, :gradyear => 15, :scheduled_courses.not => nil) %>
+      2016: <%= Student.count(:school => ROUNDROCK, :gradyear => 16) %>/<%= Student.count(:school => ROUNDROCK, :gradyear => 16, :scheduled_courses.not => nil) %>
+      2017: <%= Student.count(:school => ROUNDROCK, :gradyear => 17) %>/<%= Student.count(:school => ROUNDROCK, :gradyear => 17, :scheduled_courses.not => nil) %>
+
+Stony Point: <%= Student.count(:school => STONYPOINT) %>/<%= Student.count(:school => STONYPOINT, :scheduled_courses.not => nil) %>
+       2014: <%= Student.count(:school => STONYPOINT, :gradyear => 14) %>/<%= Student.count(:school => STONYPOINT, :gradyear => 14, :scheduled_courses.not => nil) %>
+       2015: <%= Student.count(:school => STONYPOINT, :gradyear => 15) %>/<%= Student.count(:school => STONYPOINT, :gradyear => 15, :scheduled_courses.not => nil) %>
+       2016: <%= Student.count(:school => STONYPOINT, :gradyear => 16) %>/<%= Student.count(:school => STONYPOINT, :gradyear => 16, :scheduled_courses.not => nil) %>
+       2017: <%= Student.count(:school => STONYPOINT, :gradyear => 17) %>/<%= Student.count(:school => STONYPOINT, :gradyear => 17, :scheduled_courses.not => nil) %>
+
+Cedar Ridge: <%= Student.count(:school => CEDARRIDGE) %>/<%= Student.count(:school => CEDARRIDGE, :scheduled_courses.not => nil) %>
+       2014: <%= Student.count(:school => CEDARRIDGE, :gradyear => 14) %>/<%= Student.count(:school => CEDARRIDGE, :gradyear => 14, :scheduled_courses.not => nil) %>
+       2015: <%= Student.count(:school => CEDARRIDGE, :gradyear => 15) %>/<%= Student.count(:school => CEDARRIDGE, :gradyear => 15, :scheduled_courses.not => nil) %>
+       2016: <%= Student.count(:school => CEDARRIDGE, :gradyear => 16) %>/<%= Student.count(:school => CEDARRIDGE, :gradyear => 16, :scheduled_courses.not => nil) %>
+       2017: <%= Student.count(:school => CEDARRIDGE, :gradyear => 17) %>/<%= Student.count(:school => CEDARRIDGE, :gradyear => 17, :scheduled_courses.not => nil) %>
+
+No school: <%= Student.all(:school => INDETERMINATE).count %>
+
+Total scheduled courses: <%= ScheduledCourse.count %>
+Total student name trigrams: <%= StudentTrigram.count %>
+</pre>
